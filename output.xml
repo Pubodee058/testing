@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.4 on win32)" generated="2025-08-04T14:38:54.588977" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login" source="C:\Users\DPC-H\Desktop\tester pratice\tests\test_login.robot">
+<test id="s1-t1" name="Login with Standard User" line="7">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:38:54.896544" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\DPC-H\\Desktop\\tester pratice\\browser\\traces\\temp\\5c28a0c9-70d3-4487-adb6-a66faa4b6a26"}</msg>
+<msg time="2025-08-04T14:38:54.943598" level="INFO">Starting Browser process C:\Users\DPC-H\AppData\Local\Programs\Python\Python311\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:55230</msg>
+<msg time="2025-08-04T14:38:56.623685" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\DPC-H\\Desktop\\tester pratice\\browser\\traces\\temp\\5c28a0c9-70d3-4487-adb6-a66faa4b6a26"}</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:38:54.896009" elapsed="1.728673"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:38:58.477506" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:38:58.477506" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:38:56.624682" elapsed="1.852824"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:54.894400" elapsed="3.583106"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:38:58.479620" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.478621" elapsed="0.031109"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:38:58.509730" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.509730" elapsed="0.011724"/>
+</kw>
+<arg>${STANDARD_USER}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-08-04T14:38:58.478621" elapsed="0.042833"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:38:58.522454" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.522454" elapsed="0.049144"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:58.521454" elapsed="0.050144"/>
+</kw>
+<kw name="Verify Login Success" owner="login_keywords">
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:38:58.574591" level="INFO">${URL} = https://www.saucedemo.com/inventory.html</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.572591" elapsed="0.002000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.574591" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:58.571598" elapsed="0.002993"/>
+</kw>
+<msg time="2025-08-04T14:38:58.588319" level="INFO">Switching context to context=05a3d27c-2b1e-4741-9b01-e14c06e76711 in CURRENT</msg>
+<msg time="2025-08-04T14:38:58.594327" level="INFO">Successfully changed active context: context=05a3d27c-2b1e-4741-9b01-e14c06e76711</msg>
+<msg time="2025-08-04T14:38:58.631883" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:38:54.894400" elapsed="3.680191"/>
+</test>
+<test id="s1-t2" name="Login with Unknown User" line="12">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:38:58.637969" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:38:58.640680" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:38:58.640680" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.635886" elapsed="0.004794"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:38:59.512123" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:38:59.512123" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:38:58.641678" elapsed="0.870445"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:58.634882" elapsed="0.877241"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:38:59.514126" level="INFO">Fills the text 'unknown_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.513124" elapsed="0.024676"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:38:59.537800" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.537800" elapsed="0.010691"/>
+</kw>
+<arg>unknown_user</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-08-04T14:38:59.513124" elapsed="0.035367"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:38:59.549490" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.549490" elapsed="0.032147"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:59.549490" elapsed="0.032147"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:38:59.584657" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.581637" elapsed="0.003020"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.584657" elapsed="0.001015"/>
+</kw>
+<msg time="2025-08-04T14:38:59.593852" level="INFO">Switching context to context=6d476869-e403-4d36-9142-977870658a95 in CURRENT</msg>
+<msg time="2025-08-04T14:38:59.599519" level="INFO">Successfully changed active context: context=6d476869-e403-4d36-9142-977870658a95</msg>
+<msg time="2025-08-04T14:38:59.631600" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:38:58.632884" elapsed="0.952788"/>
+</test>
+<test id="s1-t3" name="Login with Unknown password" line="18">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:38:59.638239" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:38:59.641248" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:38:59.641248" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.637687" elapsed="0.003561"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:00.407626" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:00.407626" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:38:59.641248" elapsed="0.767506"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:38:59.636679" elapsed="0.772075"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:00.410260" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.408754" elapsed="0.026190"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:00.435945" level="INFO">Fills the text 'unknown_password' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.434944" elapsed="0.013613"/>
+</kw>
+<arg>${STANDARD_USER}</arg>
+<arg>unknown_password</arg>
+<status status="PASS" start="2025-08-04T14:39:00.408754" elapsed="0.040804"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:00.450556" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.449558" elapsed="0.038316"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:00.449558" elapsed="0.038316"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:00.490870" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.487874" elapsed="0.002996"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.490870" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-04T14:39:00.500885" level="INFO">Switching context to context=05132e84-1f4e-41d3-b47d-fbf4cb0ce616 in CURRENT</msg>
+<msg time="2025-08-04T14:39:00.505911" level="INFO">Successfully changed active context: context=05132e84-1f4e-41d3-b47d-fbf4cb0ce616</msg>
+<msg time="2025-08-04T14:39:00.537027" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:38:59.631600" elapsed="0.859270"/>
+</test>
+<test id="s1-t4" name="Login with Both Unknown" line="24">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:39:00.543035" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:00.546034" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:00.546034" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.542038" elapsed="0.003996"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:01.383681" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:01.383681" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:39:00.546541" elapsed="0.837140"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:00.542038" elapsed="0.841643"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:01.385686" level="INFO">Fills the text 'unknown_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.384683" elapsed="0.021804"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:01.407384" level="INFO">Fills the text 'unknown_password' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.407384" elapsed="0.010746"/>
+</kw>
+<arg>unknown_user</arg>
+<arg>unknown_password</arg>
+<status status="PASS" start="2025-08-04T14:39:01.384683" elapsed="0.033447"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:01.419131" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.419131" elapsed="0.034449"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:01.419131" elapsed="0.034449"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:01.456257" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.453580" elapsed="0.002677"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.456257" elapsed="0.000514"/>
+</kw>
+<msg time="2025-08-04T14:39:01.466822" level="INFO">Switching context to context=28a99293-cb58-48cb-8f0b-05dcea6ed4f4 in CURRENT</msg>
+<msg time="2025-08-04T14:39:01.471861" level="INFO">Successfully changed active context: context=28a99293-cb58-48cb-8f0b-05dcea6ed4f4</msg>
+<msg time="2025-08-04T14:39:01.509453" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:39:00.538002" elapsed="0.918769"/>
+</test>
+<test id="s1-t5" name="Login with Empty username" line="30">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:39:01.528212" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:01.530220" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:01.530220" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.527673" elapsed="0.003548"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:02.395653" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:02.395653" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:39:01.531221" elapsed="0.864432"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:01.526664" elapsed="0.868989"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:02.397903" level="INFO">Fills the text '' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.396658" elapsed="0.026868"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:02.423526" level="INFO">Fills the text 'unknown_password' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.423526" elapsed="0.010068"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>unknown_password</arg>
+<status status="PASS" start="2025-08-04T14:39:02.395653" elapsed="0.037941"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:02.434568" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.434568" elapsed="0.028374"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:02.433594" elapsed="0.029348"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:02.464980" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.462942" elapsed="0.002038"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.464980" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-04T14:39:02.473599" level="INFO">Switching context to context=52b1776a-0b07-4259-a6aa-07c96db42e80 in CURRENT</msg>
+<msg time="2025-08-04T14:39:02.477793" level="INFO">Successfully changed active context: context=52b1776a-0b07-4259-a6aa-07c96db42e80</msg>
+<msg time="2025-08-04T14:39:02.509240" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:39:01.522513" elapsed="0.943460"/>
+</test>
+<test id="s1-t6" name="Login with Empty password" line="36">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:39:02.515754" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:02.518905" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:02.519907" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.514752" elapsed="0.005155"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:04.655040" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:04.655040" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:39:02.519907" elapsed="2.135133"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:02.514752" elapsed="2.140288"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:04.656546" level="INFO">Fills the text 'unknown_user' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.656040" elapsed="0.022623"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:04.679664" level="INFO">Fills the text '' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.678663" elapsed="0.011030"/>
+</kw>
+<arg>unknown_user</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-08-04T14:39:04.655040" elapsed="0.034653"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:04.690674" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.689693" elapsed="0.029209"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:04.689693" elapsed="0.029209"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:04.721066" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.718902" elapsed="0.002164"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.722066" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-04T14:39:04.730059" level="INFO">Switching context to context=c496249a-64a6-4c18-bc61-9496280effac in CURRENT</msg>
+<msg time="2025-08-04T14:39:04.735566" level="INFO">Successfully changed active context: context=c496249a-64a6-4c18-bc61-9496280effac</msg>
+<msg time="2025-08-04T14:39:04.765921" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:39:02.510241" elapsed="2.211825"/>
+</test>
+<test id="s1-t7" name="Login with Both Empty" line="42">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:39:04.772169" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:04.774171" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:04.774171" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.772169" elapsed="0.003517"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:05.754938" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:05.755936" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:39:04.775686" elapsed="0.980250"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:04.771171" elapsed="0.984765"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:05.757370" level="INFO">Fills the text '' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.757370" elapsed="0.021354"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:05.779750" level="INFO">Fills the text '' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.778724" elapsed="0.012455"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-08-04T14:39:05.755936" elapsed="0.035243"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:05.792176" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.792176" elapsed="0.023726"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:05.791179" elapsed="0.024723"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:05.818376" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.815902" elapsed="0.002474"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.818376" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-04T14:39:05.827309" level="INFO">Switching context to context=778c0455-74be-448c-aaa2-d40df75b4b8c in CURRENT</msg>
+<msg time="2025-08-04T14:39:05.833317" level="INFO">Successfully changed active context: context=778c0455-74be-448c-aaa2-d40df75b4b8c</msg>
+<msg time="2025-08-04T14:39:05.865638" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:39:04.766930" elapsed="1.051446"/>
+</test>
+<test id="s1-t8" name="Login with Special characters" line="48">
+<kw name="Open swag labs login page" owner="login_keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-08-04T14:39:05.871566" level="INFO">Switching browser to browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:05.874567" level="INFO">Successfully changed active browser: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<msg time="2025-08-04T14:39:05.876078" level="INFO">Reusing existing browser with id: browser=22cd8a6d-0173-4307-8b16-e4c943b893ea</msg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.871566" elapsed="0.004512"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-08-04T14:39:06.812024" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com/</msg>
+<msg time="2025-08-04T14:39:06.812024" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.saucedemo.com/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-08-04T14:39:05.876078" elapsed="0.935946"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:05.870556" elapsed="0.941468"/>
+</kw>
+<kw name="Input Username and PASSWORD" owner="login_keywords">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:06.814023" level="INFO">Fills the text '%dsads' in the given field.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:06.813023" elapsed="0.023177"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-08-04T14:39:06.836730" level="INFO">Fills the text '!@#' in the given field.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:06.836200" elapsed="0.008169"/>
+</kw>
+<arg>%dsads</arg>
+<arg>!@#</arg>
+<status status="PASS" start="2025-08-04T14:39:06.813023" elapsed="0.031346"/>
+</kw>
+<kw name="Submit Login" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-08-04T14:39:06.845877" level="INFO">Clicks the element 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-08-04T14:39:06.845877" elapsed="0.029925"/>
+</kw>
+<status status="PASS" start="2025-08-04T14:39:06.844369" elapsed="0.031433"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2025-08-04T14:39:06.878099" level="INFO">${URL} = https://www.saucedemo.com/</msg>
+<var>${URL}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2025-08-04T14:39:06.875802" elapsed="0.002297"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<arg>${URL}</arg>
+<arg>https://www.saucedemo.com/inventory.html</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-08-04T14:39:06.878099" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-04T14:39:06.886620" level="INFO">Switching context to context=b748971b-42bd-48e5-9c8a-40553c920f18 in CURRENT</msg>
+<msg time="2025-08-04T14:39:06.891626" level="INFO">Successfully changed active context: context=b748971b-42bd-48e5-9c8a-40553c920f18</msg>
+<msg time="2025-08-04T14:39:06.921082" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-08-04T14:39:05.866653" elapsed="1.011446"/>
+</test>
+<status status="PASS" start="2025-08-04T14:38:54.590979" elapsed="12.332112"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Login" id="s1" pass="8" fail="0" skip="0">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
